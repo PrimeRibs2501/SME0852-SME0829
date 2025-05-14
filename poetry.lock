@@ -526,6 +526,17 @@ files = [
 ]
 
 [[package]]
+name = "nvidia-nccl-cu12"
+version = "2.26.5"
+description = "NVIDIA Collective Communication Library (NCCL) Runtime"
+optional = false
+python-versions = ">=3"
+files = [
+    {file = "nvidia_nccl_cu12-2.26.5-py3-none-manylinux2014_aarch64.manylinux_2_17_aarch64.whl", hash = "sha256:adb1bf4adcc5a47f597738a0700da6aef61f8ea4251b375540ae138c7d239588"},
+    {file = "nvidia_nccl_cu12-2.26.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl", hash = "sha256:ea5ed3e053c735f16809bee7111deac62ac35b10128a8c102960a0462ce16cbe"},
+]
+
+[[package]]
 name = "openpyxl"
 version = "3.1.5"
 description = "A Python library to read/write Excel 2010 xlsx/xlsm files"
@@ -1273,7 +1284,34 @@ files = [
     {file = "Unidecode-1.3.8.tar.gz", hash = "sha256:cfdb349d46ed3873ece4586b96aa75258726e2fa8ec21d6f00a591d98806c2f4"},
 ]
 
+[[package]]
+name = "xgboost"
+version = "3.0.1"
+description = "XGBoost Python Package"
+optional = false
+python-versions = ">=3.10"
+files = [
+    {file = "xgboost-3.0.1-py3-none-macosx_10_15_x86_64.whl", hash = "sha256:de7f03c04a6601245ed9c3775514ed6602c2dd367fffa7b9721721cfcb2f2f04"},
+    {file = "xgboost-3.0.1-py3-none-macosx_12_0_arm64.whl", hash = "sha256:a3ad04d2d7b6af71a0b3280129578929ad5b321c2ccb233b9468b690af892255"},
+    {file = "xgboost-3.0.1-py3-none-manylinux2014_aarch64.whl", hash = "sha256:5c6ab1c60010b404437e9cc4d5ad2ed0cc5d513331ca807487eca95fa3eba670"},
+    {file = "xgboost-3.0.1-py3-none-manylinux2014_x86_64.whl", hash = "sha256:e031ad98ff7c70e079585f01dbac1f132fc0366ada078d6176cd34ff63433258"},
+    {file = "xgboost-3.0.1-py3-none-manylinux_2_28_aarch64.whl", hash = "sha256:7ac79f4575b82d18c0793ebfd7d28bb5fc04e3594c848b0b520f096f5fec9c4d"},
+    {file = "xgboost-3.0.1.tar.gz", hash = "sha256:ab00e97b53059d18eaf9580f0bf4c74f1b968537cbce8d9825f56a3f67628191"},
+]
+
+[package.dependencies]
+numpy = "*"
+nvidia-nccl-cu12 = {version = "*", markers = "platform_system == \"Linux\" and platform_machine != \"aarch64\""}
+scipy = "*"
+
+[package.extras]
+dask = ["dask", "distributed", "pandas"]
+pandas = ["pandas (>=1.2)"]
+plotting = ["graphviz", "matplotlib"]
+pyspark = ["cloudpickle", "pyspark", "scikit-learn"]
+scikit-learn = ["scikit-learn"]
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "e8afad64142b68453c09e69bf92a0d91b7903d5418fa915a4f169872873f5d05"
+content-hash = "5a39f565cde8d22748abb6a076cefee53961de1fb96c5e5fae172cf4a189c713"

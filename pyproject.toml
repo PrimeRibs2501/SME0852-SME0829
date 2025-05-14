@@ -17,6 +17,7 @@ nbformat = "^5.10.4"
 statsmodels = "^0.14.4"
 scikit-learn = "^1.6.1"
 phik = "^0.12.4"
+xgboost = "^3.0.1"
 
 
 [build-system]
